@@ -1,17 +1,13 @@
 import React, { Component } from "react";
 
 class Stopwatch extends Component {
-    /**
-       * state
-       */
+  
     state = {
         timerOn: false,
         timerStart: 0,
         timerTime: 0
     };
-    /**
-     * Starting the Stopwatch timer
-     */
+  
     startTimer = () => {
         this.setState({
             timerOn: true,
@@ -24,9 +20,7 @@ class Stopwatch extends Component {
             });
         }, 10);
     };
-    /**
-     * Stop and Reset
-     */
+   
     stopTimer = () => {
         this.setState({ timerOn: false });
         clearInterval(this.timer);
@@ -38,22 +32,21 @@ class Stopwatch extends Component {
         });
     };
     render() {
-        /**
-         * Formatting and Display
-         */
+        
         const { timerTime } = this.state;
-        let centiseconds = ("0" + (Math.floor(timerTime / 10) % 100))
+        let centiseconds = ("0" + (Math.floor(timerTime / 10) % 100)).slice(-2);
         let seconds = ("0" + (Math.floor(timerTime / 1000) % 60)).slice(-2);
         let minutes = ("0" + (Math.floor(timerTime / 60000) % 60)).slice(-2);
-        let hours = ("0" + Math.floor(timerTime / 3600000)).slice(-2);
+       
         return (
             <div className="Stopwatch">
                 <div className="Stopwatch-header">Stopwatch</div>
                
-                    {hours} : {minutes} : {seconds} : {centiseconds}
-                    <br/>
+                     {minutes} : {seconds} : {centiseconds}
+                    <br/><br/>
+                    <button onClick={this.startTimer}>Start</button>
                     {this.state.timerOn === false && this.state.timerTime === 0} 
-                        <button onClick={this.startTimer}>Start</button>
+                        
                     
 
                     <button  onClick={this.stopTimer}  >Pause</button>
