@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import "./App.css";
+
 class Stopwatch extends Component {
     /**
        * state
@@ -49,7 +49,7 @@ class Stopwatch extends Component {
         return (
             <div className="Stopwatch">
                 <div className="Stopwatch-header">Stopwatch</div>
-                <div className="Stopwatch-display">
+               
                     {hours} : {minutes} : {seconds} : {centiseconds}
                     <br/>
                     {this.state.timerOn === false && this.state.timerTime === 0} 
@@ -65,7 +65,7 @@ class Stopwatch extends Component {
                   
                     
                 </div>
-            </div>
+            
         );
     }
 }
