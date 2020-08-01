@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class Stopwatch extends Component {
+export default class Stopwatch extends Component {
   
     state = {
         timerOn: false,
@@ -44,6 +44,7 @@ class Stopwatch extends Component {
                
                      {minutes} : {seconds} : {centiseconds}
                     <br/><br/>
+
                     <button onClick={this.startTimer}>Start</button>
                     {this.state.timerOn === false && this.state.timerTime === 0} 
                         
@@ -62,4 +63,3 @@ class Stopwatch extends Component {
         );
     }
 }
-export default Stopwatch;
