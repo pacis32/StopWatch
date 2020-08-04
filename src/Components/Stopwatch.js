@@ -10,7 +10,7 @@ class Stopwatch extends Component {
   
     startTimer = () => {
         this.setState({
-            timerOn: true,
+            timerOn: false,
             timerTime: this.state.timerTime,
             timerStart: Date.now() - this.state.timerTime
         });
@@ -51,7 +51,7 @@ class Stopwatch extends Component {
                     
 
                     <button  onClick={this.stopTimer}  >Pause</button>
-                    {this.state.timerOn === true}
+                    {this.state.timerOn ? true: false }
                         
                     
                     <button onClick={this.resetTimer}>Reset</button>
